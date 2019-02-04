@@ -17,4 +17,4 @@ app.use(bodyParser.json())
 
 app.use(routes)
 
-app.listen(process.env.PORT, () => console.log('Express is running on port 4000'))
+app.listen(process.env.PORT, () => console.log(`Express is running on port ${process.env.PORT}`))
