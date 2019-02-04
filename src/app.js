@@ -1,7 +1,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
+
+import Header from './components/common/header'
+import BooksNew from './components/books/BooksNew'
+import BooksIndex from './components/books/BooksIndex'
+import Home from './components/Home'
+
 import axios from 'axios'
+
+import './style.scss'
 
 class App extends React.Component {
   constructor(){
@@ -21,7 +30,16 @@ class App extends React.Component {
 
   render(){
     return(
-      <h1>Hello World!</h1>
+      <BrowserRouter>
+        <main>
+          <Header />
+          <Switch>
+            <Route path="/books/new" component={BooksNew} />
+            <Route path="/books" component={BooksIndex} />
+            <Route path="/" component={Home} />
+          </Switch>
+        </main>
+      </BrowserRouter>
     )
   }
 }
