@@ -11,7 +11,7 @@ const app = express()
 
 app.use(express.static(`${__dirname}/dist`))
 
-mongoose.connect('mongodb://localhost/wdi-mdb')
+mongoose.connect(process.env.MONGODB_URI)
 
 app.use(bodyParser.json())
 
